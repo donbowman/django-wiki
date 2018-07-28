@@ -107,7 +107,6 @@ class ImageRevision(RevisionPluginRevision):
 def on_image_revision_delete(instance, *args, **kwargs):
     if not instance.image:
         return
-
     # Remove image file
     instance.image.delete(save=False)
 

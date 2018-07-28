@@ -1,0 +1,28 @@
+---
+image: cr.agilicus.com/corp-tools/build-containers/omni
+
+variables:
+  HANGOUTS_SPACE: AAAAggs6GGU
+  HANGOUTS_KEY: AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+  HANGOUTS_TOKEN: sABBkobpC4fwiGLxtseMbu5gGmEjF8GEoweLM_uhhSw
+  HANGOUTS_THREAD: $CI_PROJECT_PATH
+  HANGOUTS_MSG: $GITLAB_USER_LOGIN::$CI_JOB_STAGE $CI_PROJECT_PATH -- see $CI_PROJECT_URL/-/jobs/$CI_BUILD_ID\n$GIT_COMMIT_TITLE
+  HANGOUTS_URL: "https://chat.googleapis.com/v1/spaces/$HANGOUTS_SPACE/messages?key=$HANGOUTS_KEY&token=$HANGOUTS_TOKEN&threadKey=$HANGOUTS_THREAD"
+
+stages:
+  - build
+
+before_script:
+  - echo "Before Script"
+
+#after_script:
+#  - echo curl -X POST -H 'Content-Type: application/json' $HANGOUTS_URL  -d "{\"text\":\"$HANGOUTS_MSG\"}"
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - reports
+  script: |
+    mkdir -p reports
+    tox 2>&1 |tee reports/coverage.txt

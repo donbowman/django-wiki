@@ -60,3 +60,6 @@ virtualenv
 *.swp
 
 __pycache__
+
+.gitlab-ci.cache/
+reports/

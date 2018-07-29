@@ -256,6 +256,8 @@ else:
     LOGOUT_URL = getattr(django_settings, "LOGOUT_URL", "/")
     SIGNUP_URL = getattr(django_settings, "WIKI_SIGNUP_URL", "/")
 
+SOCIAL_AUTH_GOOGLE = True if len(getattr(django_settings, 'SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', '')) else False
+
 ##################
 # OTHER SETTINGS #
 ##################

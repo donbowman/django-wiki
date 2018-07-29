@@ -22,7 +22,12 @@
     </form>
 
     <p>
-      {% trans "Don't have an account?" %} <a href="{% url 'wiki:signup' %}">{% trans "Sign up" %} &raquo;</a>
+      {% if "ACCOUNT_SIGNUP_ALLOWED"|wiki_settings %}
+        {% trans "Don't have an account?" %} <a href="{% url 'wiki:signup' %}">{% trans "Sign up" %} &raquo;</a>
+      {% endif %}
+      {% if "SOCIAL_AUTH_GOOGLE"|wiki_settings %}
+      <img src=/media/wiki/google-logo.png><a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-primary btn-lg">Login with G Suite</a>
+      {% endif %}
     </p>
 
   </div>

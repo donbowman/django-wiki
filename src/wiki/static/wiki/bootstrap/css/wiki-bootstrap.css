@@ -6917,15 +6917,19 @@ h1#article-title {
   color: #ba0000;
 }
 .wiki-article pre {
+  /*
   max-width: 700px;
   max-height: 150px;
+  */
   overflow: auto;
   word-wrap: normal;
   white-space: pre;
 }
 .wiki-article .codehilitetable {
+  /*
   max-width: 700px;
   max-height: 150px;
+  */
   background-color: #f5f5f5;
   border-color: #ccc;
   border-radius: 4px;

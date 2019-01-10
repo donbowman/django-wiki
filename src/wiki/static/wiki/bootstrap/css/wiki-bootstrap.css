@@ -9129,7 +9129,7 @@ textarea.form-vertical .wiki-control textarea {
 .wiki-article .codehilite-wrap {
   overflow: auto;
   max-width: auto;
-  max-height: 250px;
+  max-height: 700px;
 }
 .wiki-article .codehilitetable pre {
   max-width: none;

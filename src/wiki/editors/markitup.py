@@ -9,8 +9,8 @@ class MarkItUpWidget(forms.Widget):
         # The 'rows' and 'cols' attributes are required for HTML correctness.
         default_attrs = {
             'class': 'markItUp',
-            'rows': '10',
-            'cols': '40',
+            'rows': '40',
+            'cols': '80',
         }
         if attrs:
             default_attrs.update(attrs)
